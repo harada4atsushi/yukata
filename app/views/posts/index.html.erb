@@ -1,0 +1,63 @@
+<%- model_class = Post -%>
+
+<script>
+$(document).ready(function() {
+  var $container = $('#container');
+  // initialize
+  $container.masonry({
+    columnWidth: 100,
+    itemSelector: '.item'
+  });
+});
+</script>
+
+<div id="container">
+  <% @posts.each do |post| %>
+    <div class="item"><%= link_to edit_post_path(post) do %><%= image_tag post.image.url(:medium) %><% end %></div>
+  <% end %>
+  <div class="item"><img src="http://livedoor.blogimg.jp/chokonyan/imgs/9/9/99fb3e5a.JPG"></div>
+  <div class="item"><img src="http://event.rakuten.co.jp/highclass/selection/img/thumb/luxury01/200906/16/luxury138_01_02.jpg"></div>
+  <div class="item w2"><img src="http://image.rakuten.co.jp/so-bien/cabinet/yu/luxjewel/lux13koa-f11-3411.jpg"></div>
+  <div class="item"><img src="http://pds.exblog.jp/pds/1/201009/24/08/c0128108_0171757.jpg"></div>
+  <div class="item"><img src="http://livedoor.blogimg.jp/chokonyan/imgs/9/9/99fb3e5a.JPG"></div>
+  <div class="item"><img src="http://livedoor.blogimg.jp/chokonyan/imgs/9/9/99fb3e5a.JPG"></div>
+  <div class="item"><img src="http://livedoor.blogimg.jp/chokonyan/imgs/9/9/99fb3e5a.JPG"></div>
+  ...
+</div>
+
+<!--
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.id, post_path(post) %></td>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%=l post.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      post_path(post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-primary' %>
+-->
