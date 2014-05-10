@@ -24,14 +24,17 @@
   </div>
 </div>
 <div class="contentFooter">
-  <button id="falseInput" class="btnReset"><img src="/static/img/snap/camera.png" height="30" alt=""></button>
+  <!-- <button id="falseInput" class="btnReset"><img src="/static/img/snap/camera.png" height="30" alt=""></button> -->
+  <%= f.submit :class => "btn" %>
   <%= link_to "SKIP", skip_themes_path(:theme_kbn => @theme.theme_kbn, :woman_id => @theme.woman_id), :class => "skipBtn" %>
   <%#= f.submit %>
 </div>
 
 <!-- <input id="fileInput" type="file" style="display:none;" /> -->
-<%= f.file_field :photo, :class => "fileInput", :style => "display:none;" %>
+<%#= f.file_field :photo, :class => "fileInput", :style => "display:none;" %>
+<%= f.file_field :photo, :class => "fileInput" %>
 
+<!--
 <script>
   $('.fileInput').change(function(){
     // 1. 選択されたファイルがない場合は何もせずにreturn
@@ -45,7 +48,6 @@
 
     // 5. 読み込みが完了した際のイベントハンドラ。imgのsrcにデータをセット
     fileReader.onload = function(event) {
-      alert("test");
       // 読み込んだデータの処理
       //location.href = "theme2.html";
       $("#new_theme").submit();
@@ -62,6 +64,7 @@
     });
   });
 </script>
+-->
 
 <%= f.hidden_field :woman_id %>
 <%= f.hidden_field :theme_kbn %>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get "/pages/:action" => "pages#:action"
 
-  #root 'welcome#index'
+  root 'pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
