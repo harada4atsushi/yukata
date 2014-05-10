@@ -1,0 +1,37 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../css/common.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+		<script>
+		$(function(){
+			$('#container').masonry({	//ここには敷き詰めたい要素を囲うidなど指定します。
+				itemSelector : '.item'	//ここに敷き詰めたい要素のclassを指定します。
+			});
+		});
+		</script>
+		<title>ユカタスナップ</title>
+	</head>
+	<body>
+		<div class="contentHeader">
+			<h1 class="contentTitle">ユカタスナップ一覧</h1>
+		</div>
+		<div class="coontentBody">
+			<div id="container">
+				<div class="item">1</div>
+				<div class="item" style="height:100px;">2</div>
+				<div class="item">3</div>
+				<div class="item" style="height:100px;">2</div>
+				<div class="item">3</div>
+				<div class="item" style="height:200px;">2</div>
+			</div>
+		</div>
+		<div class="contentFooter">
+			<a href="snap_start.html" class="btnB">撮影スタート</a>
+		</div>
+	</body>
+</html>
