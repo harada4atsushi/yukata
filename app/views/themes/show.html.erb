@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Woman:</strong>
+  <%= @theme.woman_id %>
+</p>
+
+<p>
+  <strong>Theme kbn:</strong>
+  <%= @theme.theme_kbn %>
+</p>
+
+<%= image_tag @theme.photo.url(:thumb) %>
+  
+
+<%= link_to 'Edit', edit_theme_path(@theme) %> |
+<%= link_to 'Back', themes_path %>

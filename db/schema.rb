@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509150312) do
+ActiveRecord::Schema.define(version: 20140510044839) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(version: 20140509150312) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "themes", force: true do |t|
+    t.integer  "woman_id"
+    t.integer  "theme_kbn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "women", force: true do |t|
+    t.string   "name"
+    t.string   "area"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

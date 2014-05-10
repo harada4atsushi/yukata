@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  resources :themes do
+    get "skip", :on => :collection
+  end
+
+  resources :women
+
   resources :posts
+
+  get "/pages/:action" => "pages#:action"
+
+  #root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

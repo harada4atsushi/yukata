@@ -1,0 +1,36 @@
+<%= form_for(@woman) do |f| %>
+  <% if @woman.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@woman.errors.count, "error") %> prohibited this woman from being saved:</h2>
+
+      <ul>
+      <% @woman.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @woman.themes.each do |theme| %>
+    <%= image_tag theme.photo.url(:thumb) %>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :published %><br>
+    <%= f.check_box :published %>
+  </div>
+  <%#= f.fields_for @theme do |i| %>
+    <%#= i.file_field :photo %>
+  <%# end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

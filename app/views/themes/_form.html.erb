@@ -1,0 +1,25 @@
+<%= form_for(@theme) do |f| %>
+  ミッション　なんたらかんたら<br />
+  説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明
+  <br />
+  <br />
+  <% if @theme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@theme.errors.count, "error") %> prohibited this theme from being saved:</h2>
+
+      <ul>
+      <% @theme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :woman_id %>
+  <%= f.hidden_field :theme_kbn %>
+  <%= f.file_field :photo %>
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to "SKIP", skip_themes_path(:theme_kbn => @theme.theme_kbn, :women_id => @theme.woman_id), :class => "btn" %>
+  </div>
+<% end %>

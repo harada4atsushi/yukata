@@ -34,6 +34,8 @@ gem 'twitter-bootstrap-rails'
 gem "simple_form"
 gem "paperclip"
 
+gem 'rails-i18n'
+
 gem 'rails_12factor', group: :production
 ruby '2.1.1'
 

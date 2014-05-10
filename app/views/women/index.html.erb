@@ -1,0 +1,40 @@
+<% @women.each do |woman| %>
+  <%= woman.name %> ちゃん<br />
+  <% if woman.themes[0].present? %>
+    <%= image_tag woman.themes[0].photo.url(:thumb) %><br />
+  <% end %>
+  <br />
+<% end %>
+<br />
+<%= link_to '撮影', "/pages/explain", :class => "btn" %></td>
+        
+<!--
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Area</th>
+      <th>Published</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @women.each do |woman| %>
+      <tr>
+        <td><%#= woman.name %></td>
+        <td><%#= woman.area %></td>
+        <td><%#= woman.published %></td>
+        <td><%#= link_to 'Show', woman %></td>
+        <td><%#= link_to 'Edit', edit_woman_path(woman) %></td>
+        <td><%#= link_to 'Destroy', woman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+-->
+
+<br>
+
+<br />
+<%#= link_to 'New Woman', new_woman_path %>
