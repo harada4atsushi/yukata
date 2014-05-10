@@ -1,25 +1,64 @@
+<!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/common.css" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <title>ユカタスナップ</title>
+-->
 <%= form_for(@theme) do |f| %>
-  ミッション　なんたらかんたら<br />
-  説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明
-  <br />
-  <br />
-  <% if @theme.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@theme.errors.count, "error") %> prohibited this theme from being saved:</h2>
-
-      <ul>
-      <% @theme.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.hidden_field :woman_id %>
-  <%= f.hidden_field :theme_kbn %>
-  <%= f.file_field :photo %>
-  <div class="actions">
-    <%= f.submit %>
-    <%= link_to "SKIP", skip_themes_path(:theme_kbn => @theme.theme_kbn, :women_id => @theme.woman_id), :class => "btn" %>
+<div class="contentHeader">
+  <%= link_to "戻る", women_path, :class => "backBtn" %>
+  <h1 class="contentTitle">ユカタスナップの取り方</h1>
+</div>
+<div class="coontentBody">
+  <p><img src="/static/img/snap/snap_start.jpg" width="100%" alt=""></p>
+  <h2 class="subTitle">ミッション</h2>
+  <p class="themeTxt">スナップショット</p>
+  
+  <div class="hintBox">
+    <h3 class="hintTitle">ヒント</h3>
+    <p>笑顔が大事</p>
   </div>
+</div>
+<div class="contentFooter">
+  <button id="falseInput">カメラ</button>
+  <%= link_to "SKIP", skip_themes_path(:theme_kbn => @theme.theme_kbn, :woman_id => @theme.woman_id), :class => "skipBtn btn" %>
+  <%= f.submit %>
+</div>
+
+<!-- <input id="fileInput" type="file" style="display:none;" /> -->
+<%= f.file_field :photo, :class => "fileInput" %>
+<!--
+<script>
+  $('#fileInput').change(function(){
+    // 1. 選択されたファイルがない場合は何もせずにreturn
+    if (!this.files.length) {
+      return;
+    }
+
+    var file = this.files[0],            // 2. files配列にファイルが入っています
+      $_img = $(this).siblings('img'), // 3. jQueryのsiblingsメソッドで兄弟のimgを取得
+      fileReader = new FileReader();   // 4. ファイルを読み込むFileReaderオブジェクト
+
+    // 5. 読み込みが完了した際のイベントハンドラ。imgのsrcにデータをセット
+    fileReader.onload = function(event) {
+      // 読み込んだデータの処理
+      location.href = "theme2.html";
+    };
+
+    // 6. 画像読み込み
+    fileReader.readAsDataURL(file);
+  });
+
+  // input type="file"のスタイルは変え難いので別のボタンから発火させる
+  $(document).ready( function() {
+    $('#falseInput').click(function(){
+      $("#fileInput").click();
+    });
+  });
+</script>
+-->
+
+<%= f.hidden_field :woman_id %>
+<%= f.hidden_field :theme_kbn %>
 <% end %>

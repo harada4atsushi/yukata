@@ -30,8 +30,8 @@ class ThemesController < ApplicationController
     @theme = Theme.new(theme_params)
     if @theme.save
       if @theme.theme_kbn >= 5
-        #redirect_to "/pages/complete" and return
-        redirect_to edit_woman_path(@theme.woman_id)
+        redirect_to "/pages/complete" and return
+        #redirect_to edit_woman_path(@theme.woman_id)
       end
       theme_kbn = @theme.theme_kbn + 1
       redirect_to new_theme_path(:theme_kbn => theme_kbn, :woman_id => @theme.woman_id)
@@ -45,7 +45,8 @@ class ThemesController < ApplicationController
     woman_id = params[:woman_id]
     theme_kbn = theme_kbn.to_i
     if theme_kbn >= 5
-      redirect_to edit_woman_path(@theme.woman_id) and return
+      #redirect_to edit_woman_path(woman_id) and return
+      redirect_to "/pages/complete" and return
     end
     theme_kbn += 1
     redirect_to new_theme_path(:theme_kbn => theme_kbn, :woman_id => woman_id)

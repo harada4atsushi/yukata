@@ -1,40 +1,34 @@
-<% @women.each do |woman| %>
-  <%= woman.name %> ちゃん<br />
-  <% if woman.themes[0].present? %>
-    <%= image_tag woman.themes[0].photo.url(:thumb) %><br />
-  <% end %>
-  <br />
-<% end %>
-<br />
-<%= link_to '撮影', "/pages/explain", :class => "btn" %></td>
-        
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Area</th>
-      <th>Published</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<script>
+$(function(){
+  $('#container').masonry({ //ここには敷き詰めたい要素を囲うidなど指定します。
+    itemSelector : '.item'  //ここに敷き詰めたい要素のclassを指定します。
+  });
+});
+</script>
 
-  <tbody>
+<div class="contentHeader">
+  <h1 class="contentTitle">ユカタスナップ一覧</h1>
+</div>
+<div class="coontentBody">
+  <div id="container">
     <% @women.each do |woman| %>
-      <tr>
-        <td><%#= woman.name %></td>
-        <td><%#= woman.area %></td>
-        <td><%#= woman.published %></td>
-        <td><%#= link_to 'Show', woman %></td>
-        <td><%#= link_to 'Edit', edit_woman_path(woman) %></td>
-        <td><%#= link_to 'Destroy', woman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if woman.themes[0].present? %>
+        <div class="item"><%= image_tag woman.themes[0].photo.url(:medium), :style => "width:100%;" %><br /></div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
--->
+  </div>
+</div>
+<div class="contentFooter">
+  <!-- <a href="snap_start.html" class="btnB">撮影スタート</a> -->
+  <%= link_to '撮影スタート', "/pages/explain", :class => "btn" %></td>
+</div>
 
-<br>
 
-<br />
-<%#= link_to 'New Woman', new_woman_path %>
+<!--
+    <div class="item">1</div>
+    <div class="item" style="height:100px;">2</div>
+    <div class="item">3</div>
+    <div class="item" style="height:100px;">2</div>
+    <div class="item">3</div>
+    <div class="item" style="height:200px;">2</div>
+    -->
