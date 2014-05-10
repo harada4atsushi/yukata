@@ -1,0 +1,37 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="css/common.css" type="text/css" />
+		<link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+		<script src="js/jquery.bxslider.js"></script>
+		<script>
+		$(function() {
+			$('.bxslider').bxSlider({
+			  infiniteLoop: false,
+			  hideControlOnEnd: true,
+				onSlideAfter: function(){
+					if($(".bx-default-pager .bx-pager-item:eq(3) a").hasClass('active')) {
+						alert('A slide has finished transitioning. Bravo. Click OK to continue!');
+					}
+  				}
+			});
+		});
+		</script>
+		<title>ユカタスナップ</title>
+	</head>
+	<body>
+		<div class="coontentBody">
+			<ul class="bxslider">
+				<li><div style="width:100%; height:100px; background: #000;"></div></li>
+				<li><div style="width:100%; height:100px; background: #00F;"></div></li>
+				<li><div style="width:100%; height:100px; background: #0F0;"></div></li>
+				<li><div style="width:100%; height:100px; background: #F00;"></div></li>
+			</ul>
+			<a href="snap/index.html" class="startBtn btn">スタート</a >
+		</div>
+	</body>
+</html>
