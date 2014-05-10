@@ -13,25 +13,26 @@
 			$('.bxslider').bxSlider({
 			  infiniteLoop: false,
 			  hideControlOnEnd: true,
-				onSlideAfter: function(){
-					if($(".bx-default-pager .bx-pager-item:eq(3) a").hasClass('active')) {
-						alert('A slide has finished transitioning. Bravo. Click OK to continue!');
-					}
-  				}
+				// onSlideAfter: function(){
+				// 	if($(".bx-default-pager .bx-pager-item:eq(3) a").hasClass('active')) {
+				// 		alert('A slide has finished transitioning. Bravo. Click OK to continue!');
+				// 	}
+  		// 		}
 			});
 		});
 		</script>
 		<title>ユカタスナップ</title>
 	</head>
 	<body>
-		<div class="coontentBody">
+		<div class="coontentBody" style="margin: 0;">
 			<ul class="bxslider">
-				<li><div style="width:100%; height:100px; background: #000;"></div></li>
-				<li><div style="width:100%; height:100px; background: #00F;"></div></li>
-				<li><div style="width:100%; height:100px; background: #0F0;"></div></li>
-				<li><div style="width:100%; height:100px; background: #F00;"></div></li>
+				<li><img src="img/tr1.jpg" width="100%" alt=""></li>
+				<li><img src="img/tr2.jpg" width="100%" alt=""></li>
+				<li><img src="img/tr3.jpg" width="100%" alt=""></li>
+				<li><img src="img/tr4.jpg" width="100%" alt=""></li>
+				<li><img src="img/tr5.jpg" width="100%" alt=""></li>
 			</ul>
-			<a href="snap/index.html" class="startBtn btn">スタート</a >
+			<div class="btnBox"><a href="snap/index.html" class="startBtn btn">利用開始</a></div>
 		</div>
 	</body>
 </html>

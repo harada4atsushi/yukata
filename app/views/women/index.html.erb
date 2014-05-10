@@ -13,14 +13,14 @@ $(function(){
   <div id="container">
     <% @women.each do |woman| %>
       <% if woman.themes[0].present? %>
-        <div class="item"><%= image_tag woman.themes[0].photo.url(:medium), :style => "width:100%;" %><br /></div>
+      <div class="item"><%= image_tag woman.themes[0].photo.url(:medium), :style => "width:100%;" %></div>
       <% end %>
     <% end %>
   </div>
 </div>
 <div class="contentFooter">
   <!-- <a href="snap_start.html" class="btnB">撮影スタート</a> -->
-  <%= link_to '撮影スタート', "/pages/explain", :class => "btn" %></td>
+  <%= link_to '撮影スタート', "/pages/explain", :class => "btn btnB" %></td>
 </div>
 
 

@@ -5,6 +5,7 @@
 body {
 	font-family: sans-serif;
 	background: #F5F5F5;
+	line-height: 1.3;
 }
 
 a{
@@ -15,12 +16,19 @@ a{
 .btn {
 	display: inline-block;
 	min-width: 100px;
-	line-height: 44px;
+	line-height: 34px;
 	text-align: center;
-	background: #CCCCCC;
+	background: #FF6699;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	color: #FFF;
+}
+
+.btnReset {
+	margin: 7px 0 0;
+	border:none;
+	background: none;
 }
 
 .btnBox {
@@ -29,28 +37,26 @@ a{
 
 .backBtn {
 	position: absolute;
-	top: 10px;
+	top: 14px;
 	left: 10px;
+	color: #999;
 }
 
 .skipBtn {
 	position: absolute;
-	top:20px;
+	top:17px;
 	right:20px;
+	color:#FF6699;
+}
+
+.startBtn {
+	min-width: 150px;
+	line-height: 34px;
 }
 
 .btnB {
-	margin: 6px 0 0;
-	display: inline-block;
-	min-width: 100px;
-	line-height: 34px;
-	text-align: center;
 	padding: 0 20px;
-	border: #CCC solid 2px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	box-sizing:border-box;
+	margin: 8px 0 0;
 }
 
 .contentHeader {
@@ -78,6 +84,42 @@ h2,h3,p{
 	margin: 50px 0 0;
 }
 
+.subTitle {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.themeTxt {
+	padding: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	background: #FFF;
+	color: #FF6699;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.hintBox {
+	margin: 0 20px;
+	padding: 10px 15px;
+	border: #CCC solid 2px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	.hintTitle {
+		margin: 0 0 10px;
+		font-size:90%;
+		color: #999;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
 .contentFooter {
 	width: 100%;
 	height: 50px;
@@ -89,13 +131,34 @@ h2,h3,p{
 	border-top:#CCC solid 1px;
 }
 
+.subTitleFinish {
+	color: #FF6699;
+	text-align: center;
+	font-weight: bold;
+	font-size:20px;
+}
+
+.lineBox {
+	margin: 50px 0 30px;
+	padding: 20px 30px;
+	background: #FFF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	p {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
 // snap index
 .item {
-    width: 40%;
-    height: 300px;
-    margin: 5px;
+    width: 45%;
+    margin: 6px 0 4px 10px;
     float: left;
-    border: 1px solid #ccc;
-    background: #eee;
-    box-shadow: 0 2px 1px #eee;
+    
+    img {
+    	font-size: 0;
+    	line-height: 0;
+    }
 }

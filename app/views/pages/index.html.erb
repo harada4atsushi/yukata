@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/static/css/jquery.bxslider.css" type="text/css" />
+<script src="/static/js/jquery.bxslider.js"></script>
+		<script>
+		$(function() {
+			$('.bxslider').bxSlider({
+			  infiniteLoop: false,
+			  hideControlOnEnd: true,
+				// onSlideAfter: function(){
+				// 	if($(".bx-default-pager .bx-pager-item:eq(3) a").hasClass('active')) {
+				// 		alert('A slide has finished transitioning. Bravo. Click OK to continue!');
+				// 	}
+  		// 		}
+			});
+		});
+		</script>
+		<title>ユカタスナップ</title>
+	</head>
+	<body>
+		<div class="coontentBody" style="margin: 0;">
+			<ul class="bxslider">
+				<li><img src="/static/img/tr1.jpg" width="100%" alt=""></li>
+				<li><img src="/static/img/tr2.jpg" width="100%" alt=""></li>
+				<li><img src="/static/img/tr3.jpg" width="100%" alt=""></li>
+				<li><img src="/static/img/tr4.jpg" width="100%" alt=""></li>
+				<li><img src="/static/img/tr5.jpg" width="100%" alt=""></li>
+			</ul>
+			<div class="btnBox">
+				<%= link_to "利用開始", women_path, :class => "startBtn btn" %>
+			</div>
+		</div>
+	</body>
+</html>

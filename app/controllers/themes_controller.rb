@@ -15,6 +15,7 @@ class ThemesController < ApplicationController
   def new
     @theme = Theme.new
     @theme.theme_kbn = params[:theme_kbn] || 1
+    params[:theme_kbn] = @theme.theme_kbn
     if @theme.theme_kbn == 1       
       woman = Woman.create
       @theme.woman_id = woman.id

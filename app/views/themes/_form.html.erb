@@ -5,32 +5,35 @@
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <title>ユカタスナップ</title>
 -->
+<% theme_kbn = params[:theme_kbn].to_i %>
+<% info = Theme.info[theme_kbn] %>
 <%= form_for(@theme) do |f| %>
 <div class="contentHeader">
   <%= link_to "戻る", women_path, :class => "backBtn" %>
   <h1 class="contentTitle">ユカタスナップの取り方</h1>
 </div>
 <div class="coontentBody">
-  <p><img src="/static/img/snap/snap_start.jpg" width="100%" alt=""></p>
+  <p><img src="/static/img/snap/snap<%= theme_kbn %>.jpg" width="100%" alt=""></p>
   <h2 class="subTitle">ミッション</h2>
-  <p class="themeTxt">スナップショット</p>
+  <p class="themeTxt"><%= info[:mission].html_safe %></p>
+  <p><%= info[:mission_text].html_safe %></p>
   
   <div class="hintBox">
     <h3 class="hintTitle">ヒント</h3>
-    <p>笑顔が大事</p>
+    <p><%= info[:hint_text].html_safe %></p>
   </div>
 </div>
 <div class="contentFooter">
-  <button id="falseInput">カメラ</button>
-  <%= link_to "SKIP", skip_themes_path(:theme_kbn => @theme.theme_kbn, :woman_id => @theme.woman_id), :class => "skipBtn btn" %>
-  <%= f.submit %>
+  <button id="falseInput" class="btnReset"><img src="/static/img/snap/camera.png" height="30" alt=""></button>
+  <%= link_to "SKIP", skip_themes_path(:theme_kbn => @theme.theme_kbn, :woman_id => @theme.woman_id), :class => "skipBtn" %>
+  <%#= f.submit %>
 </div>
 
 <!-- <input id="fileInput" type="file" style="display:none;" /> -->
-<%= f.file_field :photo, :class => "fileInput" %>
-<!--
+<%= f.file_field :photo, :class => "fileInput", :style => "display:none;" %>
+
 <script>
-  $('#fileInput').change(function(){
+  $('.fileInput').change(function(){
     // 1. 選択されたファイルがない場合は何もせずにreturn
     if (!this.files.length) {
       return;
@@ -42,8 +45,10 @@
 
     // 5. 読み込みが完了した際のイベントハンドラ。imgのsrcにデータをセット
     fileReader.onload = function(event) {
+      alert("test");
       // 読み込んだデータの処理
-      location.href = "theme2.html";
+      //location.href = "theme2.html";
+      $("#new_theme").submit();
     };
 
     // 6. 画像読み込み
@@ -53,11 +58,10 @@
   // input type="file"のスタイルは変え難いので別のボタンから発火させる
   $(document).ready( function() {
     $('#falseInput').click(function(){
-      $("#fileInput").click();
+      $(".fileInput").click();
     });
   });
 </script>
--->
 
 <%= f.hidden_field :woman_id %>
 <%= f.hidden_field :theme_kbn %>
